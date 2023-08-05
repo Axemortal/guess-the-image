@@ -29,7 +29,7 @@ export const GuessTheImage = () => {
 
   useEffect(() => {
     api.search
-      .getPhotos({ query: searchQuery, orientation: "landscape" })
+      .getPhotos({ query: searchQuery, orientation: "portrait", perPage: 20 })
       .then((res) => {
         if (res.errors) {
           console.log(res.errors);
