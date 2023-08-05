@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { Home } from "./Unsplash";
+import { GuessTheImage } from "./guessTheImage/guessTheImage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Home />
+    <GuessTheImage />
   </React.StrictMode>
 );
 
