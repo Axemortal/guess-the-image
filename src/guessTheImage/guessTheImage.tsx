@@ -12,11 +12,11 @@ const api = createApi({
 });
 
 const Photo = ({ photo }: { photo: Basic }) => {
-  const { urls } = photo;
+  const { urls, alt_description } = photo;
 
   return (
     <Fragment>
-      <img className="image" src={urls.regular} />
+      <img className="image" src={urls.regular} alt={alt_description || ""} />
     </Fragment>
   );
 };
