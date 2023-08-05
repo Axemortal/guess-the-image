@@ -62,7 +62,7 @@ export const ImageCropper = ({ photo }: { photo: Basic }) => {
       {!isCropped && (
         <div>
           <ReactCrop crop={crop} onChange={(newCrop) => setCrop(newCrop)}>
-            <img src={urls.regular} />
+            <img src={urls.regular} alt={alt_description || ""} />
           </ReactCrop>
         </div>
       )}
