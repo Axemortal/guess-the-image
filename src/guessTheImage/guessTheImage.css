@@ -11,6 +11,11 @@
     align-items: center;
     margin: auto;
   }
+
+  .control span {
+    margin: 0 10px;
+    color: white;
+  }
   
   .button {
     cursor: pointer;
@@ -18,4 +23,8 @@
 
   .image {
     max-height: 100%;
+  }
+
+  .cropped-image {
+    height: 100vh;
   }

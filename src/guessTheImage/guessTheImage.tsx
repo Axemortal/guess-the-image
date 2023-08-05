@@ -1,25 +1,13 @@
-import { Fragment, useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { createApi } from "unsplash-js";
 import { Basic } from "unsplash-js/dist/methods/photos/types";
 import "../index.css";
 import "./guessTheImage.css";
-
-const unsplashAccessKey: string =
-  process.env.REACT_APP_UNSPLASH_ACCESS_KEY || "";
+import ImageCropper from "./imageCropper";
 
 const api = createApi({
-  accessKey: unsplashAccessKey,
+  accessKey: process.env.REACT_APP_UNSPLASH_ACCESS_KEY || "",
 });
-
-const Photo = ({ photo }: { photo: Basic }) => {
-  const { urls, alt_description } = photo;
-
-  return (
-    <Fragment>
-      <img className="image" src={urls.regular} alt={alt_description || ""} />
-    </Fragment>
-  );
-};
 
 export const GuessTheImage = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -34,7 +22,6 @@ export const GuessTheImage = () => {
         if (res.errors) {
           console.log(res.errors);
         }
-        console.log(res);
         if (res.response?.results.length) {
           setPhotos(res.response?.results);
         }
@@ -59,9 +46,9 @@ export const GuessTheImage = () => {
   return (
     <main>
       <div className="container">
-        {0 <= photoIndex && photoIndex <= photos.length && (
+        {0 <= photoIndex && photoIndex <= photos.length - 1 && (
           <div>
-            <Photo photo={photos[photoIndex]} />
+            <ImageCropper photo={photos[photoIndex]} />
           </div>
         )}
 
