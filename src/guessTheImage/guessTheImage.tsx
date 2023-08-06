@@ -3,7 +3,7 @@ import { createApi } from "unsplash-js";
 import { Basic } from "unsplash-js/dist/methods/photos/types";
 import "../index.css";
 import "./guessTheImage.css";
-import ImageCropper from "./imageCropper";
+import {ImageCropper} from "./imageCropper";
 
 const api = createApi({
   accessKey: process.env.REACT_APP_UNSPLASH_ACCESS_KEY || "",
